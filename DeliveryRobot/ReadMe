@@ -1,0 +1,7 @@
+This is a quick JavaScript project on comparing different methods of package delivery on a small village that random changes roads and were the packages are. 
+It does a hundred runs of the random VillageState and compares how many steps each robot takes.
+Robots:
+1. Random - the robot that goes to from place to place at random, it will deliver and pick up all the packages, eventually.
+2. Route - the robot follows a specific route, it can go to the same place multiple times, but the route is set
+3. Goal - the robot looks for the closest position with a package to its current location and travels to it 
+4. Lazy - the robot gets a reward from picking up a package, but a penalty from the length of the route to get to the package, so it looks for the maximum reward
