@@ -18,5 +18,40 @@ are collected the file is outputted into a json file and stored, then data is re
 main_2 - combines the function for running afterwards, there is also a sample out of the tweets collected at the bottom
 
 Part 2: Emerging Topics over Time (Only English)
-For sake of time, I will only go through the English topics here, after an hour of data collection, the first run of the topic modeling occurs
+For sake of time, I will only go through the English topics here, after an hour of data collection, the first run of the topic modeling 
+occurs.
+Functions:
+all_files - Gets all files from Json_file output, import the jsons and convert them to pandas dataframes, concat the individual data 
+frames into one dataframe
+lang_detect_2 - helper function for calling the langdetect library 
+lang_loop - detects the language of each tweet and labels the data with the language
+English_Tweets_Func - get only the English tweets
+Functions date_func through sort_chrono, are time helper functions 
+stopwords_en_func - creates the English stop words
+stopwords_en - removes the stop words from the texts
+bigrams - makes bigrams (two-word phrases) from the non stop word texts
+data_lemmatization_en - Turn the words into lemmas English (Cutting off the endings of words (ex: -ed, -ing) for better groupings
+createList - a helper function for creating topic_id numbers, change dynamically
+compute_coherence_values - Detour to focus on hyperparameter tunning of the LDA Model, first build the function to test the 
+hyperparameters of the number of topics (k), the document - topic density (alpha) and the Word - topic density (beta), we get the 
+coherence score for each model using the 'c_v' which is measure is based on a sliding window, one-set segmentation of the top words
+and an indirect confirmation measure that uses normalized pointwise mutual information (NPMI) and the cosine similarity
+lda_hyperparameter_generating_en - LDA Hyperparameter Finding function for English, loops through various combinations of hyperparameters
+of lda to find the maximum coherence value
+lda_hyper_define_en - Hyper Parameter Defining for English, getting the max coherence across the different amounts of topics then 
+getting the hyperparameters based on the max coherence value, (coherence is a value of topic interprebility, a measure of 
+semantic similarity
+build_lda_en - using both the hyperparameters idenified and the stopwords, bigram and lemma function to get the final LDA model. 
+Then create the weights dataframe, extract individual document topic proportions as determined by the LDA model.
+The Gensim LDA model can classify, the specific relative proportions for all ten topics within each document as long as you set the
+minimum_probability, argument to 0. If not dine, then some topics may be dropped from the final weighting if they did not 
+meet the probability threshold set by default. Extraction Loop: This loop extracts the topic proportions for all topics for
+every individual document and places them into a dataframe with a document-id key for merging topic proportion information 
+with other datasets about our corpus. The final output of this function is a dataframe that has the final per-document dataframe over time 
+which is then used for visualizations. 
+viz_topic_time_en - Visualization of Topics over Time English
+main_tm - putting it all together
+
+
+
 
