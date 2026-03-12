@@ -9,6 +9,10 @@ NOTE: This is a subsample of the code behind the paper I published: Extracting e
 the multilingual analysis of emerging geopolitical topics in near real time. 
 https://jsomer.org/index.php/pub/article/view/14
 
+For sake of time for the video, I am only showing the English analysis functions in this Jupyter notebook. However, the full code,
+also all written by me can be found here:
+https://github.com/jb370/Automatic-GR/tree/main/Python/Real_Time_Python_Code
+
 This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
 of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
