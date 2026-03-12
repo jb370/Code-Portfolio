@@ -1,5 +1,7 @@
 ReadMe for the Tubi Interview File. 
 
+NOTE: All code was written by me unless specified by a stackexchange link.
+
 This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
 of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
