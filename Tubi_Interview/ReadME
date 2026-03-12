@@ -5,6 +5,10 @@ NOTE: All code was written by me unless specified by a stackexchange link.
 NOTE: Unforunately this code is no longer runable due to access changes in the X / Twitter API, however, the Jupyter notebook file has a 
 sample output of the API and the image files provide a sample output of the visualizations. 
 
+NOTE: This is a subsample of the code behind the paper I published: Extracting emerging events from social media: X/Twitter and 
+the multilingual analysis of emerging geopolitical topics in near real time. 
+https://jsomer.org/index.php/pub/article/view/14
+
 This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
 of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
