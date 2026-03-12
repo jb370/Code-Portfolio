@@ -13,12 +13,41 @@ For sake of time for the video, I am only showing the English analysis functions
 also all written by me can be found here:
 https://github.com/jb370/Automatic-GR/tree/main/Python/Real_Time_Python_Code
 
-OVERVIEW: This code uses the X / Twitter streaming data API to extract tweets relating to generic geopolitical keywords and then stores these
+BACKGROUND:
+From IBM
+What is topic modeling?
+In natural language processing (NLP), topic modeling is a text mining technique that applies unsupervised learning [sic machine learning] on
+large sets of texts to produce a summary set of terms that represent the collection’s overall primary set of topics. Topic models 
+assist in text classification and information retrieval tasks. Topic models specifically identify common keywords or phrases in a text
+dataset and group those words under a number of topics. They aim to uncover the latent topics or themes characterizing a set of documents.
+In this way, topic models are a machine learning-based form of text analysis used to thematically annotate large text corpora.
+Link: https://www.ibm.com/think/topics/topic-modeling
+
+OVERVIEW: 
+This code uses the X / Twitter streaming data API to extract tweets relating to generic geopolitical keywords and then stores these
 tweets in output json files. After an hour, the topic modeling machine learning model gathers all the output json files, combines them, finds
 the hyperparameters for the topic model (in this case the Latent Dirichlet Allocation or "LDA") that maximize topic coherence i.e. how easily
 the topics can be interpreted based on the words that make up the individual topics. It then builds a topics over time 
 using weights and topic and word proportions to show the change of relevance each topic has by hour. This repeats once an hour to show the 
-growth of topics over time, which are visualized. Below goes into more detail about the individual functions that make up the main analysis.
+growth of topics over time, which are visualized. 
+
+KEY DESIGN DETAILS: 
+Why X / Twitter? - At the time, they had a robust API that could be adapted to look for the specific geopolitical data I was interested in, 
+it also provided a large based of real world data to analyze from around the globe to understand potential underreported / emerging risks. 
+
+Why Python? - This was a small paper of my larger PhD research that was analyzing these tweets for sentiment, relationship between geopolitical
+risk and financial markets, and location. Python provided the best way for me to keep all these moving parts together.
+
+Why LDA? - It had both the speed I needed (learned from other research I conducted into topic modeling) and the flexiblity with Python
+
+Why dynamical select hyperparameters? - While this is slower than just hard coding the hyperparameters for LDA, it provides more robust topics
+that are easier to interpret. 
+
+Why choose this way to model topics over time? - There are several ways to analyze change in topics over time (for example Dynamic Topic Modeling),
+however using hourly topic proportions worked best with Python and allowed for easier to interpret visualization. 
+
+DETAILS:
+Below goes into more detail about the individual functions that make up the main analysis.
 
 This ReadME will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
