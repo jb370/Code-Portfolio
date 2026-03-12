@@ -2,6 +2,9 @@ ReadMe for the Tubi Interview File.
 
 NOTE: All code was written by me unless specified by a stackexchange link.
 
+NOTE: Unforunately this code is no longer runable due to access changes in the X / Twitter API, however, the Jupyter notebook file has a 
+sample output of the API and the image files provide a sample output of the visualizations. 
+
 This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
 of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
@@ -53,6 +56,10 @@ with other datasets about our corpus. The final output of this function is a dat
 which is then used for visualizations. 
 viz_topic_time_en - Visualization of Topics over Time English
 main_tm - putting it all together
+
+Lastly - the two output images show the difference between this method and a similiar emerging topic tracker, Google Trends, as the images 
+show, my method here was able to identify Iran as an emerging topic three hours before it spiked in the Google Trends data, providing 
+a longer lead time for decision makers to respond to rapidly evolving geopolitical events. 
 
 
 
