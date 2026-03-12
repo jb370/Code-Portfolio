@@ -1,1 +1,22 @@
-ReadMe for the Tubi Interview File. This will describe the Jupyter notebook and the functions within.
+ReadMe for the Tubi Interview File. 
+
+This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
+that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
+of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
+
+Part 1: The incoming streaming data from X / Twitter
+Functions:
+bearer_oauth - Method required by bearer token authentication
+get_rules - Initializes the rules to be added to collect the incoming streaming data
+delete_all_rules - Delete all the Rules Function, to clean the slate
+set_rules - this is the set of rules to be listened for, in my case this was variation geopolitical topics across 7 languages, it was also
+possible to add "tags" to help identify the specific topics later on
+Merge - a helper function to merge dictionaries called in the get_stream function
+get_stream - Get Stream API Started Function, get the requests of the stream with the rules and the created_at data as well, as the data
+comes in one dictionary is created to hold the text data, created_at, and other dictionary is created to hold the tag, after 100 tweets 
+are collected the file is outputted into a json file and stored, then data is reset for next set of collection
+main_2 - combines the function for running afterwards, there is also a sample out of the tweets collected at the bottom
+
+Part 2: Emerging Topics over Time (Only English)
+For sake of time, I will only go through the English topics here, after an hour of data collection, the first run of the topic modeling occurs
+
