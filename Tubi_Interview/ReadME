@@ -13,7 +13,14 @@ For sake of time for the video, I am only showing the English analysis functions
 also all written by me can be found here:
 https://github.com/jb370/Automatic-GR/tree/main/Python/Real_Time_Python_Code
 
-This will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
+OVERVIEW: This code uses the X / Twitter streaming data API to extract tweets relating to generic geopolitical keywords and then stores these
+tweets in output json files. After an hour, the topic modeling machine learning model gathers all the output json files, combines them, finds
+the hyperparameters for the topic model (in this case the Latent Dirichlet Allocation or "LDA") that maximize topic coherence i.e. how easily
+the topics can be interpreted based on the words that make up the individual topics. It then builds a topics over time 
+using weights and topic and word proportions to show the change of relevance each topic has by hour. This repeats once an hour to show the 
+growth of topics over time, which are visualized. Below goes into more detail about the individual functions that make up the main analysis.
+
+This ReadME will describe the Jupyter notebook and the functions within for the Emerging Geopolitical Topics system I developed with machine learning 
 that takes in X / Twitter streaming data and creates topics over time. The two image files are the output, the Iran_Topic is a sample output 
 of the Jupyter notebook and the Iran_Google_Trends is the comparsion to the X / Twitter emerging topics.
 
@@ -57,7 +64,7 @@ semantic similarity
 build_lda_en - using both the hyperparameters idenified and the stopwords, bigram and lemma function to get the final LDA model. 
 Then create the weights dataframe, extract individual document topic proportions as determined by the LDA model.
 The Gensim LDA model can classify, the specific relative proportions for all ten topics within each document as long as you set the
-minimum_probability, argument to 0. If not dine, then some topics may be dropped from the final weighting if they did not 
+minimum_probability, argument to 0. If not done, then some topics may be dropped from the final weighting if they did not 
 meet the probability threshold set by default. Extraction Loop: This loop extracts the topic proportions for all topics for
 every individual document and places them into a dataframe with a document-id key for merging topic proportion information 
 with other datasets about our corpus. The final output of this function is a dataframe that has the final per-document dataframe over time 
