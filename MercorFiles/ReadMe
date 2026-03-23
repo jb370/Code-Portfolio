@@ -1,1 +1,5 @@
+Various Files Related to Mercor Projects:
 
+First: PhD/Education Rater -> Japanese_test_No_Sent file, sheet1: The Japanese text; sheet2: the sentiment output from the two runs of 
+the Gemini Pro 3, with the sentiment column the sentiment form the original human annotated sentiment labels; sheet 3: the complete 
+second Gemini run compared to the original human labeled sentiment, after the non answers were removed. 
