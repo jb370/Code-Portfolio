@@ -1,0 +1,3 @@
+This was a project about extracting and analyzing DC Permits stored with REST Services and enriches the permit 
+information with location, functional class of the permit and highest functional class per permit application. 
+See README.md for more details. 
